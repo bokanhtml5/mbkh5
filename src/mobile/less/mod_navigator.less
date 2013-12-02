@@ -1,0 +1,50 @@
+/**
+ * module navigator
+ */
+.nav{
+	height: @nav-height;
+	position: relative;
+	z-index: 9991;
+	
+	// 导航条版hlist的特殊样式
+	.swiper-wrapper {
+		height: @nav-height;
+	}
+	.swiper-slide{
+		height: @nav-height;
+		line-height: @nav-height;
+		padding: 0 10px;
+	}
+	// 文本颜色
+    .swiper-slide a{
+        color: @ui-nav-blue-color;
+    }
+
+    .swiper-slide a span{
+        color: @ui-nav-blue-color;
+    }
+    
+    // 激活状态 
+    .swiper-slide.swiper-active a{
+        color: #17518d;
+        .text-shadow(1px,1px,2px,#fff);
+        font-size: 1.05rem;
+    }
+
+	
+	.nav-in{
+    	position: fixed;
+    	top: 0;
+    	left: 0;
+    	width: 100%;
+    	height: @nav-height;
+    	overflow: hidden;
+    	background-color: @ui-nav-blue-bgcolor;
+
+    	// 浏览器高>=400时，title条会fixed在头部,因此让出位置
+		@media screen and (min-height: @read-height) {
+		    top: @title-height;
+		}
+    }
+	
+}

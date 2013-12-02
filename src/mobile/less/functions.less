@@ -1,0 +1,78 @@
+// common less functions 
+.image(@src, @type, @width, @height, @posx, @posy, @repeat){
+    background-image: url('@{src}.@{type}');
+    background-position: @posx @posy;
+    background-repeat: @repeat;
+
+    /**
+     * Retina屏幕适配。在参考资料基础上做了完善.
+     * 参考：
+     * http://css-tricks.com/snippets/css/retina-display-media-query/
+     * http://www.w3.org/html/ig/zh/wiki/Css3-values
+     * 
+     * min--moz可能是一个bug
+     * 新的css3规范里，增加了dppx单位，代表每像素点数，即每个像素占多少点
+     * 类似device-pixel-ratio设备像素比
+     * 
+     * 此外还有dpi:每英寸点数。dpcm:每厘米点数
+     * resolution:分辨率
+     * 这里像素比采用2，实际上国外更流行大于1就使用retina图片。比如1.25
+     * 
+     * opera的可能有问题，网上有这么用的：
+     * ~`"-o-min-device-pixel-ratio: 1.25/1"`
+     * 
+     * 另：选择器里套@media而不是@media套选择器，是因为less能把选择器套
+     * @media编译为正确的写法
+     * 
+     * 详见：http://www.lesscss.net/article/document.html中的：
+     * “嵌套 Media Queries”部分
+     * 
+     */
+    @media
+    only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (   min--moz-device-pixel-ratio: 2),
+    only screen and (   -min-moz-device-pixel-ratio: 2),
+    only screen and (     -o-min-device-pixel-ratio: 2/1),
+    only screen and (        min-device-pixel-ratio: 2),
+    only screen and (                min-resolution: 192dpi),
+    only screen and (                min-resolution: 2dppx) {
+        background-size: @width @height;
+        background-image: url('@{src}@2x.@{type}');
+        background-position: @posx @posy;
+    }
+}
+.box-shadow(@x:0, @y:0, @blur:0, @spread:0, @color:#000000){
+    -webkit-box-shadow: @x @y @blur @spread @color;
+    -o-box-shadow: @x @y @blur @spread @color;
+    -moz-box-shadow: @x @y @blur @spread @color;
+    -ms-box-shadow: @x @y @blur @spread @color;
+    box-shadow: @x @y @blur @spread @color;
+}
+.box-inset-shadow(@x:0, @y:0, @blur:0, @spread:0, @color:#000000){
+    -webkit-box-shadow: @x @y @blur @spread @color inset;
+    -o-box-shadow: @x @y @blur @spread @color inset;
+    -moz-box-shadow: @x @y @blur @spread @color inset;
+    -ms-box-shadow: @x @y @blur @spread @color inset;
+    box-shadow: @x @y @blur @spread @color inset;
+}
+.text-shadow(@x:0, @y:0, @blur:0, @color:#000000){
+    -webkit-text-shadow: @x @y @blur @color;
+    -o-text-shadow: @x @y @blur @color;
+    -moz-text-shadow: @x @y @blur @color;
+    -ms-text-shadow: @x @y @blur @color;
+    text-shadow: @x @y @blur @color;
+}
+// 清除浮动
+.clearfix(){
+    &:before,
+    &:after {
+        content: " ";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+    & {
+        *zoom: 1;
+    }
+}

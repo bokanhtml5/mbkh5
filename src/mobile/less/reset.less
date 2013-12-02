@@ -1,0 +1,70 @@
+html,body,div,ul,ol,li,dl,dt,dd,p,h1,h2,h3,h4,h5,h6,a,img,th,td,form,input,button,textarea,fieldset,iframe,object,pre,code,legend,blockquote{margin:0;padding:0;border:0;outline:0;}
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+
+a {
+    background: transparent;
+    // color: #000;
+    text-decoration: none;
+}
+
+/**
+ * Address `outline` inconsistency between Chrome and other browsers.
+ */
+
+a:focus {
+    outline: thin dotted;
+}
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+
+a:active,
+a:hover {
+    outline: 0;
+}
+a:visited{
+    // color: #000;
+}
+/* clear folat */
+.cf:before,
+.cf:after {
+    content: " ";
+    display: table;
+}
+.cf:after {
+    clear: both;
+}
+.cf {
+    *zoom: 1;
+}
+
+ul,ol,li{
+    list-style: none;
+}
+/**
+ * font-set
+ */
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+
+html {
+    font-family: sans-serif; /* 1 */
+    -ms-text-size-adjust: 100%; /* 2 */
+    -webkit-text-size-adjust: 100%; /* 2 */
+    color: @color;
+}
+h1 {
+    font-size: 1.25rem;
+}
+h2 {
+    font-size: 1.125rem;
+}
+h3,h4,h5,h6{
+    font-size: 1rem;
+}

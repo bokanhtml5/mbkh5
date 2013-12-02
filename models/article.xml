@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<data>
+		<title>{dede:field.title/}</title>
+		<a>{dede:field.a/}</a>
+		<keyword>{dede:field.keyword/}</keyword>
+		<description>{dede:field.description/}</description>
+		<body>{dede:field.body/}</body>
+		<typeid>{dede:field.typeid/}</typeid>
+		<templet>{dede:field.templet/}</templet>
+		<d_con>
+			<![CDATA[
+			{dede:field.d_con/}
+			]]>
+		</d_con>
+	</data>
+</root>

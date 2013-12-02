@@ -1,0 +1,42 @@
+/**
+ * module title
+ * 本篇里之所以没有用less的嵌套，是因为据说：
+ * 后代选择器在移动端的性能影响较大。所以禁止使用嵌套
+ */
+@title-height: 37px;
+@title-bgcolor: #edeeef;
+.title{
+	height: @title-height;
+	font-size: 1rem;
+	text-align: center;
+	position: relative;
+	z-index: 9992;
+	
+	.title-in{
+    	position: fixed;
+    	top: 0;
+    	left: 0;
+    	width: 100%;
+    	height: @title-height;
+    	background-color: @title-bgcolor;
+    	overflow: hidden;
+    	.box-shadow(0,1px,2px,0px,#000000);
+    }
+
+    display: none;
+	// 浏览器高度大于等于400时，title条才显示
+	@media screen and (min-height: @read-height) {
+	    display: block;
+	}
+}
+
+
+.title-logo{
+	display: inline-block;
+	font-size: 1.1875rem;
+	margin: 0;
+	height: @title-height;
+	line-height: @title-height;
+	.image(@logo-src, @logo-type, @logo-width, @logo-height, 0, 50%, no-repeat);
+	padding-left: 27px;
+}

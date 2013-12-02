@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+{dede:arclist typeid="12" titlelen="28" limit="3,5" orderby='weight'}
+<item>
+	<id>[field:id/]</id>
+	<weight>[field:weight/]</weight>
+	<arcurl>[field:arcurl/]</arcurl>
+	<title>[field:title/]</title>
+	<fulltitle>[field:fulltitle/]</fulltitle>
+</item>
+{/dede:arclist}
+</data>
