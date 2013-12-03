@@ -28,7 +28,7 @@ module.exports = function(app) {
 		res.send("123");
 	});
 	app.get(/^\/plus\/view\.php/, function (req, res) {
-
+console.log(apiurl + "ajax_view.php");
 		needle.post(apiurl + "ajax_view.php",'aid='+req.query.aid+'&datatpl='+getXML(),
 			function (err,resp,body) {
 			
