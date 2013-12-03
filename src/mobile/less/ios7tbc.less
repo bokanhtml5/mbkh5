@@ -1,0 +1,61 @@
+/*******************************************************
+ * IOS7工具栏变色效果
+ * *****************************************************
+ */
+.ios7tbc{
+    height: 0;
+    overflow: hidden;
+}
+.ios7tbc:before{
+    content: " ";
+    position: fixed;
+    top: -42px;
+    height: 42px;
+    border-bottom: 1px solid rgba(0,0,0,0);
+    background-clip: padding-box;
+    background-color: blue;
+    width: 100%;
+    z-index: 100;
+}
+
+/**
+ * 底部的变色条
+ * 在页面内容高度足够滚动时会有效果
+ * 否则没有。
+ */
+.ios7tbc:after{
+    content: " ";
+    position: fixed;
+    bottom: -42px;
+    height: 42px;
+    border-top: 1px solid rgba(0,0,0,0);
+    background-clip: padding-box;
+    background-color: blue;
+    width: 100%;
+}
+
+.ios7tbc-animate:before,
+.ios7tbc-animate:after{
+    -webkit-animation:"ios7tbc" 18s linear 0s infinite;
+}
+.ios7 body{
+    background-color: transparent;//影响ios7 safari工具条淡色
+    background-image: linear-gradient(to bottom, @page-bg 0%, @page-bg 100%);
+}
+@-webkit-keyframes "ios7tbc"{
+    0%{
+        background-color: blue;
+    }
+    25%{
+        background-color: red;
+    }
+    50%{
+        background-color: yellow;
+    }
+    75%{
+        background-color: green;
+    }
+    100%{
+        background-color: blue;
+    }
+}

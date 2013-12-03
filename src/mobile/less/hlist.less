@@ -1,0 +1,108 @@
+/***************************************************
+ * hlist
+ * 水平列表
+ * **************************************************
+ */
+
+// hlist需要用到swiper组件
+.swiper-wrapper{
+    width: 3000px;
+    overflow: hidden;
+}
+.swiper-slide{
+    
+    a {
+        display: block;
+    }
+    
+    a b{
+        display: block;
+    }
+    a span{
+        display: block;
+        text-overflow:ellipsis;
+        overflow: hidden;
+        // margin: 7px -6px;
+        line-height: 1.25; 
+    }
+}
+
+
+.hlist{
+    overflow: hidden;
+    
+    .swiper-slide{
+        width: 88px;
+        padding-left: 10px;
+    }
+    .swiper-slide a{
+        line-height: 1.1;
+    }
+    
+    .swiper-slide a span{
+        display: block;
+        /*text-overflow:ellipsis;
+        white-space: nowrap;
+        overflow: hidden;*/
+        margin: 7px -6px;
+        line-height: 1.25;
+        font-size: 0.875rem;
+        text-align: center;
+    }
+}
+// 图片+标题形式的 横向滑动列表
+.hlist-imgtitle{
+    .swiper-slide a b{
+        background-color: @hlist-imgtitle-maskcolor;
+        -webkit-mask-image:url(../images/pro_mask.png);
+        -webkit-mask-size: 200% 100%;
+        display: block;
+        padding: 2px;
+        position: relative;
+    }
+    .swiper-slide a img{
+        width: 84px;
+        height: 92px;
+        display: block;
+        -webkit-mask-image:url(@hlist-imgtitle-maskurl);
+        -webkit-mask-size: 200% 100%;
+        -webkit-mask-repeat: no-repeat;
+    }
+    // 标题颜色
+    .swiper-slide a span{
+        color: @hlist-imgtitle-title-color;
+        font-size: 0.875rem;
+    }
+    // shadow
+    .swiper-slide a b:before{
+        content: " ";
+        position: absolute;
+        left: 2px;
+        top: 2px;
+        right: 2px;
+        bottom: 2px;
+        background-image:url(@hlist-imgtitle-maskurl);
+        background-size: 200% 100%;
+        background-position: 100% 0;
+        z-index: 20;
+    }
+}
+// 分隔符
+.hlist-separator{
+    .swiper-slide:not(:first-child):before,
+    .swiper-slide:not(:last-child):after{
+        content: " ";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        margin-top: -0.53126em;
+        width: 1px;
+        height: 1.0625em;
+        background-color: @ui-nav-blue-borderleft;
+    }
+    .swiper-slide:not(:last-child):after{
+        left: auto;
+        right: 0;
+        background-color: @ui-nav-blue-borderright;
+    }
+}

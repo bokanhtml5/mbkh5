@@ -1,12 +1,25 @@
-@import "config.less";		// 通用的变量设置
-@import "reset.less";		// 重置
-@import "base.less";		// css布局类&通用组件
-@import "functions.less";	// less封装的通用函数
-@import "meta.less";		// 一些用到的原子类
+@import "config.less";			// 通用的变量设置
+@import "reset.less";			// 重置
+@import "layout.less";			// css布局类
+@import "functions.less";		// less封装的通用函数
+@import "meta.less";			// 一些用到的原子类
+/**
+ * 用到的组件
+ */
+@import "btn-access.less";		// 访问按钮
+@import "arc-subtitle.less";	// 文章子标题
+@import "icon.less";			// 图标通用类
+@import "ios7tbc.less";			// ios7工具栏变色
+@import "hlist.less";			// 横向“图+标题”滑动列表
+@import "list-text.less";		// 竖向纯文字列表
+@import "markdown-body.less";	// markdown-body设置
 
+// 初始化页面背景色
 body{
 	background-color: @page-bg;
 }
+
+// ======= 页面有关的css =====
 
 /**
  * module title

@@ -1,0 +1,61 @@
+/**************************************************
+ * 纯标题型列表
+ ***************************************************
+ */
+.list-text{
+    font-size: 1rem;
+
+    > li{
+        height:  2.875em;
+        line-height:  2.875em;
+        padding-right: @page-padding;
+        padding-left: @page-padding;
+    }
+    > li a{
+        display: block;
+        height: 100%;
+        position: relative;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        padding-right: 1em;
+    }
+    > li a span{
+        color: #000000;
+    }
+    > li a i{
+        position: absolute;
+        right: -0.2em;
+        top: 50%;
+        margin-top: -0.5em;
+    }
+}
+.list-text-share{
+    position: relative;
+
+    > li {
+        background-color: @list-text-share-bgcolor;
+        border-bottom: 1px solid #ecd9b9;
+        border-top: 1px solid #fcfaf7;
+    }
+    > li:first-child{
+        .box-inset-shadow(0,1px,3px,0px,#e1d7c2);
+        border-top: none;
+    }
+    > li:last-child{
+        border-bottom: none;
+    }
+    > li a span,
+    > li a i{
+        color: @list-text-share-color;
+    }
+    &:before{
+        content: " ";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 5px;
+
+    }
+}

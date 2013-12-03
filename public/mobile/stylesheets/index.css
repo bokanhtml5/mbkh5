@@ -229,6 +229,28 @@ h6 {
 .col-xs-0 {
   width: 0%;
 }
+/**
+ * meta classes
+ * 按理说好的架构里面不会推荐使用原子类。
+ * 但是不同的项目有不同的需求。
+ * 所以适合项目即可。
+ * 在本项目中也不打算非常多的原子类，一些通用的会加上
+ */
+.pt10 {
+  padding-top: 10px;
+}
+.mt15 {
+  margin-top: 15px;
+}
+.mb10 {
+  margin-bottom: 10px;
+}
+.gray {
+  color: #616161;
+}
+/**
+ * 用到的组件
+ */
 /****************************************************
  * access btn
  * ***************************************************
@@ -295,6 +317,45 @@ h6 {
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
 }
+/*******************************************************
+ * arc-subtitle
+ * 文章页子标题效果
+ * ******************************************************
+ */
+.arc-subtitle {
+  height: 20px;
+  line-height: 20px;
+  overflow: hidden;
+}
+.arc-subtitle h2 {
+  display: inline-block;
+  font-weight: normal;
+  position: relative;
+  padding-left: 1rem;
+  padding-right: 0.5rem;
+}
+.arc-subtitle h2:before {
+  content: " ";
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  top: 50%;
+  margin-top: -4px;
+  right: -8px;
+  border: 2px solid #c7c7c9;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.arc-subtitle h2:after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  right: -2508px;
+  margin-top: -0.5px;
+  width: 2500px;
+  height: 0;
+  border-bottom: 1px solid #c7c7c9;
+}
 /*********************************************
  * icon
  * 关于webfont的实践代码见下
@@ -302,7 +363,7 @@ h6 {
  */
 @font-face {
   font-family: icon;
-  src: url('../fonts/entypo.ttf') format('truetype');
+  src: url('../font/entypo.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -1516,45 +1577,6 @@ h6 {
     background-color: blue;
   }
 }
-/*******************************************************
- * arc-subtitle
- * 文章页子标题效果
- * ******************************************************
- */
-.arc-subtitle {
-  height: 20px;
-  line-height: 20px;
-  overflow: hidden;
-}
-.arc-subtitle h2 {
-  display: inline-block;
-  font-weight: normal;
-  position: relative;
-  padding-left: 1rem;
-  padding-right: 0.5rem;
-}
-.arc-subtitle h2:before {
-  content: " ";
-  position: absolute;
-  width: 4px;
-  height: 4px;
-  top: 50%;
-  margin-top: -4px;
-  right: -8px;
-  border: 2px solid #c7c7c9;
-  border-radius: 50%;
-  overflow: hidden;
-}
-.arc-subtitle h2:after {
-  content: " ";
-  position: absolute;
-  top: 50%;
-  right: -2508px;
-  margin-top: -0.5px;
-  width: 2500px;
-  height: 0;
-  border-bottom: 1px solid #c7c7c9;
-}
 /***************************************************
  * hlist
  * 水平列表
@@ -1720,25 +1742,6 @@ h6 {
     margin-right: 15px;
   }
 }
-/**
- * meta classes
- * 按理说好的架构里面不会推荐使用原子类。
- * 但是不同的项目有不同的需求。
- * 所以适合项目即可。
- * 在本项目中也不打算非常多的原子类，一些通用的会加上
- */
-.pt10 {
-  padding-top: 10px;
-}
-.mt15 {
-  margin-top: 15px;
-}
-.mb10 {
-  margin-bottom: 10px;
-}
-.gray {
-  color: #616161;
-}
 body {
   background-color: #edeeef;
 }
@@ -1897,6 +1900,7 @@ footer {
  * class prefix: at
  */
 .portrait {
+  border: 1px solid red;
   text-align: center;
 }
 .portrait-img {

@@ -1,0 +1,41 @@
+
+/*******************************************************
+ * arc-subtitle
+ * 文章页子标题效果
+ * ******************************************************
+ */
+
+.arc-subtitle{
+    height: @arc-subtitle-height;
+    line-height: @arc-subtitle-height;
+    overflow: hidden;
+}
+.arc-subtitle h2{
+    display: inline-block;
+    font-weight: normal;
+    position: relative;
+    padding-left: 1rem;
+    padding-right: 0.5rem;
+}
+.arc-subtitle h2:before{
+    content: " ";
+    position: absolute;
+    width: @arc-subtitle-circle-radius;
+    height: @arc-subtitle-circle-radius;
+    top: 50%;
+    margin-top: -((@arc-subtitle-circle-radius+(@arc-subtitle-circle-bwidth*2))/2);
+    right: -(@arc-subtitle-circle-radius+(@arc-subtitle-circle-bwidth*2));
+    border: @arc-subtitle-circle-bwidth solid @arc-subtitle-circle-color;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.arc-subtitle h2:after{
+    content: " ";
+    position: absolute;
+    top: 50%;
+    right: -2508px;
+    margin-top: -0.5px;
+    width: 2500px;
+    height: 0;
+    border-bottom: 1px solid @arc-subtitle-circle-color;
+}

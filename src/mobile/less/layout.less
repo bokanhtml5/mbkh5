@@ -1,0 +1,101 @@
+/**
+ * 包含容器
+ */
+.container{
+    margin-right: auto;
+    margin-left: auto;
+    .clearfix();
+}
+
+
+
+/**
+ * 包含容器中的行
+ */
+.row{
+    .clearfix();
+}
+
+/**
+ * 行中每个列
+ * 参照bootstrap3中的栅格系统。
+ * 解释见：http://www.oschina.net/translate/bootstrap-3-grid-introduction
+ * 这样做的（指col后面根据分辨率加了xs/sm/md/lg）好处是
+ * 1.移动端优先
+ * 2.不同分辨率下，更好控制不同的显示形式。赞
+ *
+ * 另一个值得一提的是pull/push。这两个可以指定单元格显示的顺序。
+ * 原理用了relative的left和right.
+ * 
+ */
+
+.make-grid-columns() {
+    .col(@index) when (@index = 1) { // initial
+        @item: ~".col-xs-@{index}, .col-sm-@{index}, .col-md-@{index}, .col-lg-@{index}";
+        .col(@index + 1, @item);
+    }
+    .col(@index, @list) when (@index =< @grid-columns) { // general; "=<" isn't a typo
+        @item: ~".col-xs-@{index}, .col-sm-@{index}, .col-md-@{index}, .col-lg-@{index}";
+        .col(@index + 1, ~"@{list}, @{item}");
+    }
+    .col(@index, @list) when (@index > @grid-columns) { // terminal
+        @{list} {
+            position: relative;
+            // Prevent columns from collapsing when empty
+            min-height: 1px;
+        }
+    }
+    .col(1);
+}
+
+// col-xs-1,col-xs-2....
+.make-grid-columns();
+
+// col-xs-offset-index
+.make-offset-columns(@index, @class:xs, @type) when(@index >= 0){
+    .calc-col(@index, @class, @type);
+    .make-offset-columns(@index - 1, @class, @type);
+};
+
+.calc-col(@index, @class, @type) when (@type = offset){
+    .col-@{class}-@{type}-@{index}{
+        margin-left: percentage((@index / @grid-columns));
+    }
+}
+
+.make-offset-columns(@grid-columns, xs, offset);
+
+
+// col-xs-index
+.make-grid-columns-float() {
+    .col(@index) when (@index = 1) { // initial
+        @item: ~".col-xs-@{index}";
+        .col(@index + 1, @item);
+    }
+    .col(@index, @list) when (@index < @grid-columns) {
+        @item: ~".col-xs-@{index}";
+        .col(@index + 1, ~"@{list}, @{item}");
+    }
+    .col(@index, @list) when (@index >= @grid-columns) {
+        @{list} {
+            float: left;
+        }
+    }
+    .col(1);
+}
+
+
+.make-grid-columns-float();
+
+.make-grid-columns-width(@index, @class:xs) when(@index >= 0){
+    .calc-col(@index, @class);
+    .make-grid-columns-width(@index - 1, @class);
+};
+
+.calc-col(@index, @class) {
+    .col-@{class}-@{index}{
+        width: percentage((@index / @grid-columns));
+    }
+}
+
+.make-grid-columns-width(@grid-columns);

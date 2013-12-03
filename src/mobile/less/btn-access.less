@@ -1,0 +1,66 @@
+
+/****************************************************
+ * access btn
+ * ***************************************************
+ */
+.btn-access{
+    display: inline-block;
+    width: 100%;
+    height: @btn-height;
+    line-height: @btn-height;
+    font-size: 1rem;
+    background-color: @btn-color;
+    .box-shadow(1px,1px,0,0,#78604a);
+    color: #9c4703;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+    position: relative;
+    text-align: right;
+    cursor: pointer;
+
+}
+.btn-access > i:first-child{
+    margin-left: 16px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -0.85rem;
+    font-size: 1.7rem;
+}
+.btn-access > i:last-of-type{
+    margin-left: 16px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -0.625rem;
+}
+.btn-access span{
+    margin-left: 2.8rem;
+    margin-right: 1.7rem;
+    display: inline-block;
+    height: @btn-height;
+    line-height: @btn-height;
+    overflow: hidden;
+}
+
+.btn-access [class*="icon-"]{
+    color: #e78b04;
+    font-size: 1.25rem;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.5),0 -1px 0 rgba(0,0,0,0.1);
+}
+
+.btn-radius-l{
+    border-top-left-radius: @radius;
+    border-bottom-left-radius: @radius;
+}
+.btn-radius-t{
+    border-top-right-radius: @radius;
+    border-top-left-radius: @radius;
+}
+.btn-radius-r{
+    border-bottom-right-radius: @radius;
+    border-top-right-radius: @radius;
+}
+.btn-radius-b{
+    border-bottom-right-radius: @radius;
+    border-bottom-left-radius: @radius;
+}

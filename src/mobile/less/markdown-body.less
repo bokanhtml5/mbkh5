@@ -1,0 +1,15 @@
+
+/**************************************************
+ * 正文的两边留白
+ ***************************************************
+ */
+.markdown-body{
+    margin-left: @page-padding;
+    margin-right: @page-padding;
+
+    @media screen and (min-width: 640px) {
+        margin-left: @page-padding * 1.5;
+        margin-right: @page-padding * 1.5;
+    }
+}
+
