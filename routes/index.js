@@ -35,7 +35,7 @@ module.exports = function(app) {
 			// 解析
 			try{
 				var data = JSON.parse(body);
-				console.log(data);
+				
 				// 渲染
 				res.render("mobile/"+data.data.tplname,data.data);
 			}catch(e){
