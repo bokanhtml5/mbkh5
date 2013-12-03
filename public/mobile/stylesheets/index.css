@@ -363,7 +363,7 @@ h6 {
  */
 @font-face {
   font-family: icon;
-  src: url('../font/entypo.ttf') format('truetype');
+  src: url('/mobile/font/entypo.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -1630,7 +1630,7 @@ h6 {
   width: 84px;
   height: 92px;
   display: block;
-  -webkit-mask-image: url(../images/pro_mask.png);
+  -webkit-mask-image: url(/mobile/images/pro_mask.png);
   -webkit-mask-size: 200% 100%;
   -webkit-mask-repeat: no-repeat;
 }
@@ -1645,7 +1645,7 @@ h6 {
   top: 2px;
   right: 2px;
   bottom: 2px;
-  background-image: url(../images/pro_mask.png);
+  background-image: url(/mobile/images/pro_mask.png);
   background-size: 200% 100%;
   background-position: 100% 0;
   z-index: 20;
@@ -1786,7 +1786,7 @@ body {
   margin: 0;
   height: 37px;
   line-height: 37px;
-  background-image: url('../images/logo.png');
+  background-image: url('/mobile/images/logo.png');
   background-position: 0 50%;
   background-repeat: no-repeat;
   /**
@@ -1818,7 +1818,7 @@ body {
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-min-moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .title-logo {
     background-size: 23px 24px;
-    background-image: url('../images/logo@2x.png');
+    background-image: url('/mobile/images/logo@2x.png');
     background-position: 0 50%;
   }
 }
