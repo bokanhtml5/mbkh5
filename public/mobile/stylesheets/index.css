@@ -363,7 +363,7 @@ h6 {
  */
 @font-face {
   font-family: icon;
-  src: url('/mobile/font/entypo.ttf') format('truetype');
+  src: url('/mobile/fonts/entypo.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
