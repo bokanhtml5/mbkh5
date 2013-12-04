@@ -239,6 +239,9 @@ h6 {
 .pt10 {
   padding-top: 10px;
 }
+.pt20 {
+  padding-top: 20px;
+}
 .mt15 {
   margin-top: 15px;
 }
@@ -1900,7 +1903,6 @@ footer {
  * class prefix: at
  */
 .portrait {
-  border: 1px solid red;
   text-align: center;
 }
 .portrait-img {
@@ -1939,13 +1941,15 @@ footer {
  */
 /**
  * page article_proShow
- * class prefix: ps
+ * class prefix: aps
  */
-.aps-logo {
-  text-align: center;
+.aps-logo a {
+  display: block;
+  width: 88px;
+  margin: 0 auto;
 }
 .aps-logo a b {
-  background-color: #CECECE;
+  background-color: #cecece;
   -webkit-mask-image: url(../images/pro_mask.png);
   -webkit-mask-size: 200% 100%;
   display: block;
@@ -1956,5 +1960,32 @@ footer {
   width: 84px;
   height: 92px;
   display: block;
-  border-radius: 50%;
+  -webkit-mask-image: url(/mobile/images/pro_mask.png);
+  -webkit-mask-size: 200% 100%;
+  -webkit-mask-repeat: no-repeat;
+}
+.aps-logo a b:before {
+  content: " ";
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  right: 2px;
+  bottom: 2px;
+  background-image: url(/mobile/images/pro_mask.png);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  z-index: 20;
+}
+.aps-name {
+  line-height: 1.58823529rem;
+  padding-left: 3px;
+  float: left;
+  font-weight: normal;
+}
+.aps-name + span {
+  float: right;
+  padding-right: 10px;
+}
+.aps-intro dl dt {
+  overflow: hidden;
 }

@@ -1,12 +1,14 @@
 /**
  * page article_proShow
- * class prefix: ps
+ * class prefix: aps
  */
-.aps-logo{
-	text-align:center;
+.aps-logo a{
+	display:block;
+	width:88px;
+	margin:0 auto;
 }
 .aps-logo a b{
-	background-color: #CECECE;
+	background-color: @hlist-imgtitle-maskcolor;
 	-webkit-mask-image: url(../images/pro_mask.png);
 	-webkit-mask-size: 200% 100%;
 	display: block;
@@ -17,5 +19,33 @@
 	width: 84px;
 	height: 92px;
 	display: block;
-	border-radius: 50%;
+	-webkit-mask-image:url(@hlist-imgtitle-maskurl);
+    -webkit-mask-size: 200% 100%;
+    -webkit-mask-repeat: no-repeat;
+}
+ // shadow
+.aps-logo a b:before{
+    content: " ";
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    right: 2px;
+    bottom: 2px;
+    background-image:url(@hlist-imgtitle-maskurl);
+    background-size: 200% 100%;
+    background-position: 100% 0;
+    z-index: 20;
+}
+.aps-name{
+	line-height: 1.58823529rem;
+	padding-left: 3px;
+	float: left;
+	font-weight: normal;
+}
+.aps-name+span{
+	float:right;
+	padding-right:10px;
+}
+.aps-intro dl dt{
+	overflow:hidden;
 }
