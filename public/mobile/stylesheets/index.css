@@ -1934,3 +1934,27 @@ footer {
     border-radius: 5px;
   }
 }
+/**
+ * page article_proShow
+ */
+/**
+ * page article_proShow
+ * class prefix: ps
+ */
+.aps-logo {
+  text-align: center;
+}
+.aps-logo a b {
+  background-color: #CECECE;
+  -webkit-mask-image: url(../images/pro_mask.png);
+  -webkit-mask-size: 200% 100%;
+  display: block;
+  padding: 2px;
+  position: relative;
+}
+.aps-logo a b img {
+  width: 84px;
+  height: 92px;
+  display: block;
+  border-radius: 50%;
+}
