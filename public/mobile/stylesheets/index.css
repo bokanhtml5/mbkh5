@@ -1599,6 +1599,41 @@ h6 {
     background-color: blue;
   }
 }
+/**
+ * 项目LOGO
+ */
+.prologo a {
+  display: block;
+  max-width: 320px;
+  margin: 0 auto;
+}
+.prologo a b {
+  background-color: #cecece;
+  -webkit-mask-image: url(/mobile/images/pro_mask.png);
+  -webkit-mask-size: 200% 100%;
+  display: block;
+  padding: 2px;
+  position: relative;
+}
+.prologo a b img {
+  width: 100%;
+  display: block;
+  -webkit-mask-image: url(/mobile/images/pro_mask.png);
+  -webkit-mask-size: 200% 100%;
+  -webkit-mask-repeat: no-repeat;
+}
+.prologo a b:before {
+  content: " ";
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  right: 2px;
+  bottom: 2px;
+  background-image: url(/mobile/images/pro_mask.png);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  z-index: 20;
+}
 /***************************************************
  * hlist
  * 水平列表
@@ -1606,6 +1641,7 @@ h6 {
  */
 .swiper-wrapper {
   width: 3000px;
+  height: auto!important;
   overflow: hidden;
 }
 .swiper-slide a {
@@ -1640,37 +1676,9 @@ h6 {
   font-size: 0.875rem;
   text-align: center;
 }
-.hlist-imgtitle .swiper-slide a b {
-  background-color: #cecece;
-  -webkit-mask-image: url(../images/pro_mask.png);
-  -webkit-mask-size: 200% 100%;
-  display: block;
-  padding: 2px;
-  position: relative;
-}
-.hlist-imgtitle .swiper-slide a img {
-  width: 84px;
-  height: 92px;
-  display: block;
-  -webkit-mask-image: url(/mobile/images/pro_mask.png);
-  -webkit-mask-size: 200% 100%;
-  -webkit-mask-repeat: no-repeat;
-}
 .hlist-imgtitle .swiper-slide a span {
   color: #616161;
   font-size: 0.875rem;
-}
-.hlist-imgtitle .swiper-slide a b:before {
-  content: " ";
-  position: absolute;
-  left: 2px;
-  top: 2px;
-  right: 2px;
-  bottom: 2px;
-  background-image: url(/mobile/images/pro_mask.png);
-  background-size: 200% 100%;
-  background-position: 100% 0;
-  z-index: 20;
 }
 .hlist-separator .swiper-slide:not(:first-child):before,
 .hlist-separator .swiper-slide:not(:last-child):after {
@@ -1962,39 +1970,6 @@ footer {
  * page article_proShow
  * class prefix: aps
  */
-.aps-logo a {
-  display: block;
-  width: 88px;
-  margin: 0 auto;
-}
-.aps-logo a b {
-  background-color: #cecece;
-  -webkit-mask-image: url(../images/pro_mask.png);
-  -webkit-mask-size: 200% 100%;
-  display: block;
-  padding: 2px;
-  position: relative;
-}
-.aps-logo a b img {
-  width: 84px;
-  height: 92px;
-  display: block;
-  -webkit-mask-image: url(/mobile/images/pro_mask.png);
-  -webkit-mask-size: 200% 100%;
-  -webkit-mask-repeat: no-repeat;
-}
-.aps-logo a b:before {
-  content: " ";
-  position: absolute;
-  left: 2px;
-  top: 2px;
-  right: 2px;
-  bottom: 2px;
-  background-image: url(/mobile/images/pro_mask.png);
-  background-size: 200% 100%;
-  background-position: 100% 0;
-  z-index: 20;
-}
 .aps-name {
   line-height: 1.58823529rem;
   padding-left: 3px;

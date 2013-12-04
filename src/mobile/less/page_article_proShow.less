@@ -2,40 +2,7 @@
  * page article_proShow
  * class prefix: aps
  */
-.aps-logo a{
-	display:block;
-	width:88px;
-	margin:0 auto;
-}
-.aps-logo a b{
-	background-color: @hlist-imgtitle-maskcolor;
-	-webkit-mask-image: url(../images/pro_mask.png);
-	-webkit-mask-size: 200% 100%;
-	display: block;
-	padding: 2px;
-	position: relative;
-}
-.aps-logo a b img{
-	width: 84px;
-	height: 92px;
-	display: block;
-	-webkit-mask-image:url(@hlist-imgtitle-maskurl);
-    -webkit-mask-size: 200% 100%;
-    -webkit-mask-repeat: no-repeat;
-}
- // shadow
-.aps-logo a b:before{
-    content: " ";
-    position: absolute;
-    left: 2px;
-    top: 2px;
-    right: 2px;
-    bottom: 2px;
-    background-image:url(@hlist-imgtitle-maskurl);
-    background-size: 200% 100%;
-    background-position: 100% 0;
-    z-index: 20;
-}
+
 .aps-name{
 	line-height: 1.58823529rem;
 	padding-left: 3px;

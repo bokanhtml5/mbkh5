@@ -1,3 +1,5 @@
+// 加载依赖的其他通用类
+@import "prologo.less";         // 项目logo
 /***************************************************
  * hlist
  * 水平列表
@@ -7,6 +9,7 @@
 // hlist需要用到swiper组件
 .swiper-wrapper{
     width: 3000px;
+    height: auto!important; // 组件判断高度bug，只能写死
     overflow: hidden;
 }
 .swiper-slide{
@@ -52,40 +55,13 @@
 }
 // 图片+标题形式的 横向滑动列表
 .hlist-imgtitle{
-    .swiper-slide a b{
-        background-color: @hlist-imgtitle-maskcolor;
-        -webkit-mask-image:url(../images/pro_mask.png);
-        -webkit-mask-size: 200% 100%;
-        display: block;
-        padding: 2px;
-        position: relative;
-    }
-    .swiper-slide a img{
-        width: 84px;
-        height: 92px;
-        display: block;
-        -webkit-mask-image:url(@hlist-imgtitle-maskurl);
-        -webkit-mask-size: 200% 100%;
-        -webkit-mask-repeat: no-repeat;
-    }
+    
     // 标题颜色
     .swiper-slide a span{
         color: @hlist-imgtitle-title-color;
         font-size: 0.875rem;
     }
-    // shadow
-    .swiper-slide a b:before{
-        content: " ";
-        position: absolute;
-        left: 2px;
-        top: 2px;
-        right: 2px;
-        bottom: 2px;
-        background-image:url(@hlist-imgtitle-maskurl);
-        background-size: 200% 100%;
-        background-position: 100% 0;
-        z-index: 20;
-    }
+
 }
 // 分隔符
 .hlist-separator{

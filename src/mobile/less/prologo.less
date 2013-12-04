@@ -1,0 +1,36 @@
+/**
+ * 项目LOGO
+ */
+.prologo a{
+    display: block;
+    max-width: 320px;
+    margin: 0 auto;
+}
+.prologo a b{
+    background-color: @prologo-maskcolor;
+    -webkit-mask-image: url(@prologo-maskurl);
+    -webkit-mask-size: 200% 100%;
+    display: block;
+    padding: 2px;
+    position: relative;
+}
+.prologo a b img{
+    width: 100%;
+    display: block;
+    -webkit-mask-image:url(@prologo-maskurl);
+    -webkit-mask-size: 200% 100%;
+    -webkit-mask-repeat: no-repeat;
+}
+ // shadow
+.prologo a b:before{
+    content: " ";
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    right: 2px;
+    bottom: 2px;
+    background-image:url(@prologo-maskurl);
+    background-size: 200% 100%;
+    background-position: 100% 0;
+    z-index: 20;
+}
