@@ -40,6 +40,7 @@ module.exports = function(app) {
 				res.render("mobile/"+data.data.tplname,data.data);
 			}catch(e){
 				console.error("JSON解析错误",body);
+				res.send(404, '没有指定网页');
 				// res.end("数据错误，请报告admin@bokanedu.com"+body);
 			}
 			

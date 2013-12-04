@@ -3,10 +3,12 @@
  * Module dependencies.
  */
 
- var express = require('express');
- var routes = require('./routes');
- var http = require('http');
- var path = require('path');
+var express = require('express');
+var routes = require('./routes');
+var http = require('http');
+var path = require('path');
+
+ 
 
  var app = express();
 
@@ -14,7 +16,7 @@
 app.set('port', process.env.PORT || 8080);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
-app.use(express.favicon());
+app.use(express.favicon(__dirname+"/public/favicon.ico"));
 app.use(express.logger('dev'));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
@@ -56,3 +58,8 @@ http.createServer(app).listen(app.get('port'), function(){
              year + "年" + month + "月" + day + "日" + Hours + 
              "时" + Minutes + "分" + Seconds + "秒");
 });
+
+// 修复路径
+app.locals.addHost = function(url) {
+  return "http://www.bkh5.com" + url;
+}

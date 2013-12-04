@@ -12,7 +12,7 @@
 		<d_mblogsource>{dede:field.d_mblogsource/}</d_mblogsource>
 		<d_mblogaddress>{dede:field.d_mblogaddress/}</d_mblogaddress>
 		<d_blogsource>{dede:field.d_blogsource/}</d_blogsource>
-		<d_mblogsource>{dede:field.d_mblogsource/}</d_mblogsource>
+		<d_blogaddress>{dede:field.d_blogaddress/}</d_blogaddress>
 		<d_teazw>{dede:field.d_teazw/}</d_teazw>
 		<d_desc>
 			<![CDATA[
