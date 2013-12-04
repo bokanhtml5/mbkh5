@@ -8,6 +8,17 @@
 		<body>{dede:field.body/}</body>
 		<typeid>{dede:field.typeid/}</typeid>
 		<templet>{dede:field.templet/}</templet>
+		<d_picbody>{dede:field.d_picbody/}</d_picbody>
+		<d_mblogsource>{dede:field.d_mblogsource/}</d_mblogsource>
+		<d_mblogaddress>{dede:field.d_mblogaddress/}</d_mblogaddress>
+		<d_blogsource>{dede:field.d_blogsource/}</d_blogsource>
+		<d_mblogsource>{dede:field.d_mblogsource/}</d_mblogsource>
+		<d_teazw>{dede:field.d_teazw/}</d_teazw>
+		<d_desc>
+			<![CDATA[
+			{dede:field.d_desc/}
+			]]>
+		</d_desc>
 		<d_con>
 			<![CDATA[
 			{dede:field.d_con/}

@@ -20,25 +20,25 @@
     <div class="container pt10">
         <div class="row">
             <div class="col-xs-6 portrait">
-                <img class="portrait-img" src="" data-echo="http://www.bkh5.com/uploads/131104/1-131104191334392.png" alt="HTML5讲师XX的头像" />
+                <img class="portrait-img" src="" data-echo="<%=d_picbody%>" alt="HTML5讲师<%=title%>的头像" />
             </div>
             <div class="col-xs-6 about">
                 <dl>
                     <dt>
-                        <h1 class="at-name">李宗亮</h1>
+                        <h1 class="at-name"><%=title%></h1>
                     </dt>
                     <dd class="at-position">
-                        HTML5教学总监
+                        <%=d_teazw%>
                     </dd>
                     <dd class="at-btn-access">
-                        <a href="###" target='_blank' class="btn-access btn-icon btn-radius-l btn-orange">
+                        <a href="<%=d_mblogsource%>" target='_blank' class="btn-access btn-icon btn-radius-l btn-orange">
                             <i class="icon-sina-weibo"></i>
                             <i class="icon-right-open"></i>
                             <span>访问微博</span>
                         </a>
                     </dd>
                     <dd class="at-btn-access">
-                        <a href="###" target='_blank' class="btn-access btn-icon btn-radius-l btn-orange">
+                        <a href="<%=d_blogsource%>" target='_blank' class="btn-access btn-icon btn-radius-l btn-orange">
                             <i class="icon-rss"></i>
                             <i class="icon-right-open"></i>
                             <span>访问博客</span>
@@ -53,7 +53,7 @@
             <h2>讲师介绍</h2>
         </div>
         <div class="markdown-body gray">
-            <p>原中国联想研究院高级开发工程师、曾先后在IBM、大唐电信等知名公司担任UED部门高级工程师。9年IT开发经验，6年团队管理经验。对HCI有多年研究和造诣。凭借在知名公司积累的多年3G前端开发经验，开创国内首家3G前端开发培训课程，将网页设计和网站制作提升到3G前端开发高度；随后又创立国内第一家HTML5开发培训课程，被誉为国内HTML5的传教士。</p>
+            <%-d_desc %>
         </div>
     </div>
     <div class="arc-subtitle mt15 mb10">
