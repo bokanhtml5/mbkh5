@@ -9,31 +9,16 @@
     height: @btn-height;
     line-height: @btn-height;
     font-size: 1rem;
-    background-color: @btn-color;
-    .box-shadow(1px,1px,0,0,#78604a);
-    color: #9c4703;
-    text-shadow: 0 1px 0 rgba(255,255,255,0.5);
     position: relative;
-    text-align: right;
+    text-align: center;
     cursor: pointer;
+}
 
+// 带icon的按钮
+.btn-access.btn-icon{
+    text-align: right;
 }
-.btn-access > i:first-child{
-    margin-left: 16px;
-    position: absolute;
-    left: 0;
-    top: 50%;
-    margin-top: -0.85rem;
-    font-size: 1.7rem;
-}
-.btn-access > i:last-of-type{
-    margin-left: 16px;
-    position: absolute;
-    right: 0;
-    top: 50%;
-    margin-top: -0.625rem;
-}
-.btn-access span{
+.btn-icon span{
     margin-left: 2.8rem;
     margin-right: 1.7rem;
     display: inline-block;
@@ -41,26 +26,56 @@
     line-height: @btn-height;
     overflow: hidden;
 }
-
-.btn-access [class*="icon-"]{
-    color: #e78b04;
+.btn-icon > i:first-child{
+    margin-left: 16px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -0.85rem;
+    font-size: 1.7rem;
+}
+.btn-icon > i:last-of-type{
+    margin-left: 16px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -0.625rem;
+}
+.btn-icon [class*="icon-"]{
     font-size: 1.25rem;
+}
+// 橘色
+.btn-orange{
+    background-color: @btn-orange-bgcolor;
+    .box-shadow(1px,1px,0,0,@btn-orange-boxshadow);
+    color: @btn-orange-color;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+}
+.btn-orange [class*="icon-"]{
+    color: @btn-orange-iconcolor;
     text-shadow: 0 1px 0 rgba(255,255,255,0.5),0 -1px 0 rgba(0,0,0,0.1);
 }
-
+// 蓝色
+.btn-blue{
+    background-color: @btn-blue-bgcolor;
+    .box-shadow(1px,1px,0,0,@btn-blue-boxshadow);
+    color: @btn-blue-color;
+    // text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+}
+// 圆角
 .btn-radius-l{
-    border-top-left-radius: @radius;
-    border-bottom-left-radius: @radius;
+    border-top-left-radius: @btn-radius;
+    border-bottom-left-radius: @btn-radius;
 }
 .btn-radius-t{
-    border-top-right-radius: @radius;
-    border-top-left-radius: @radius;
+    border-top-right-radius: @btn-radius;
+    border-top-left-radius: @btn-radius;
 }
 .btn-radius-r{
-    border-bottom-right-radius: @radius;
-    border-top-right-radius: @radius;
+    border-bottom-right-radius: @btn-radius;
+    border-top-right-radius: @btn-radius;
 }
 .btn-radius-b{
-    border-bottom-right-radius: @radius;
-    border-bottom-left-radius: @radius;
+    border-bottom-right-radius: @btn-radius;
+    border-bottom-left-radius: @btn-radius;
 }

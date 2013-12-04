@@ -1,3 +1,6 @@
+/**
+ * .btn-access
+ */
 html,
 body,
 div,
@@ -264,6 +267,40 @@ h6 {
   height: 40px;
   line-height: 40px;
   font-size: 1rem;
+  position: relative;
+  text-align: center;
+  cursor: pointer;
+}
+.btn-access.btn-icon {
+  text-align: right;
+}
+.btn-icon span {
+  margin-left: 2.8rem;
+  margin-right: 1.7rem;
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+  overflow: hidden;
+}
+.btn-icon > i:first-child {
+  margin-left: 16px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -0.85rem;
+  font-size: 1.7rem;
+}
+.btn-icon > i:last-of-type {
+  margin-left: 16px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  margin-top: -0.625rem;
+}
+.btn-icon [class*="icon-"] {
+  font-size: 1.25rem;
+}
+.btn-orange {
   background-color: #f3c46c;
   -webkit-box-shadow: 1px 1px 0 0 #78604a;
   -o-box-shadow: 1px 1px 0 0 #78604a;
@@ -272,37 +309,19 @@ h6 {
   box-shadow: 1px 1px 0 0 #78604a;
   color: #9c4703;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
-  position: relative;
-  text-align: right;
-  cursor: pointer;
 }
-.btn-access > i:first-child {
-  margin-left: 16px;
-  position: absolute;
-  left: 0;
-  top: 50%;
-  margin-top: -0.85rem;
-  font-size: 1.7rem;
-}
-.btn-access > i:last-of-type {
-  margin-left: 16px;
-  position: absolute;
-  right: 0;
-  top: 50%;
-  margin-top: -0.625rem;
-}
-.btn-access span {
-  margin-left: 2.8rem;
-  margin-right: 1.7rem;
-  display: inline-block;
-  height: 40px;
-  line-height: 40px;
-  overflow: hidden;
-}
-.btn-access [class*="icon-"] {
+.btn-orange [class*="icon-"] {
   color: #e78b04;
-  font-size: 1.25rem;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5), 0 -1px 0 rgba(0, 0, 0, 0.1);
+}
+.btn-blue {
+  background-color: #44b5eb;
+  -webkit-box-shadow: 1px 1px 0 0 #006bd7;
+  -o-box-shadow: 1px 1px 0 0 #006bd7;
+  -moz-box-shadow: 1px 1px 0 0 #006bd7;
+  -ms-box-shadow: 1px 1px 0 0 #006bd7;
+  box-shadow: 1px 1px 0 0 #006bd7;
+  color: #ffffff;
 }
 .btn-radius-l {
   border-top-left-radius: 5px;
