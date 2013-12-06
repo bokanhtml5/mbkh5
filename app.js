@@ -63,3 +63,11 @@ http.createServer(app).listen(app.get('port'), function(){
 app.locals.addHost = function(url) {
   return "http://www.bkh5.com" + url;
 }
+// 同上，替换正文中的路径
+app.locals.replaceUrl = function (str) {
+    var reg = /(\<img\s[^\>]*src=)(['"])(.*?)(\2)/gi;
+    str = str.replace(reg,function ($,$1,$2,$3,$4) {
+        return $1+$2+"http://www.bkh5.com"+$3+$4;
+    });
+    return str;
+}

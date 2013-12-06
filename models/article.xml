@@ -4,6 +4,7 @@
 		<title>{dede:field.title/}</title>
 		<a>{dede:field.a/}</a>
 		<keyword>{dede:field.keywords/}</keyword>
+		<pubdate>{dede:field.pubdate function='GetDateTimeMK(@me)'/}</pubdate>
 		<description>{dede:field.description/}</description>
 		<body>{dede:field.body/}</body>
 		<typeid>{dede:field.typeid/}</typeid>
