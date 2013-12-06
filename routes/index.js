@@ -28,6 +28,8 @@ module.exports = function(app) {
 		res.send("123");
 	});
 	app.get(/^\/plus\/view\.php/, function (req, res) {
+		var navdata = fs.readFileSync(basedir + "/views/mobile/common-html/nav.config", "utf8");
+		navdata = JSON.parse(navdata);
 
 		needle.post(apiurl + "ajax_view.php",'aid='+req.query.aid+'&datatpl='+getXML(),
 			function (err,resp,body) {
@@ -35,7 +37,12 @@ module.exports = function(app) {
 			// 解析
 			try{
 				var data = JSON.parse(body);
+
 				console.log(data);
+
+				navdata.id = data.data.typeid;
+				data.data.nav = navdata;
+				
 				// 渲染
 				res.render("mobile/"+data.data.tplname,data.data);
 			}catch(e){

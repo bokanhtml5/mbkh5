@@ -24,5 +24,19 @@
 			{dede:field.d_con/}
 			]]>
 		</d_con>
+		{dede:arclist typeid="28" limit="0,5" orderby='weight'}
+		<tech>
+			<id>[field:id/]</id>
+			<title>[field:title/]</title>
+			<fulltitle>[field:fulltitle/]</fulltitle>
+		</tech>
+		{/dede:arclist}
+		{dede:arclist typeid="5" channelid="16" addfields="d_pichead" limit="0,30" orderby='weight'}
+		<teacher>
+			<id>[field:id/]</id>
+			<title>[field:title/]</title>
+			<d_pichead>[field:d_pichead/]</d_pichead>
+		</teacher>
+		{/dede:arclist}
 	</data>
 </root>

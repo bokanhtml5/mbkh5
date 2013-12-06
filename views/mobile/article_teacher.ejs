@@ -55,59 +55,19 @@
         </div>
     </div>
     <div class="arc-subtitle mt15 mb10">
-        <h2>项目案例</h2>
+        <h2>HTML5讲师</h2>
     </div>
     <div class="hlist">
         <div class="hlist-in hlist-project swiper hlist-imgtitle">
             <ul class="swiper-wrapper">
+                <% for(var i=0; i<teacher.length; i++) {%>
                 <li class="swiper-slide prologo">
-                    <a href="#">
-                        <b><img src="http://www.bkh5.com/uploads/131117/1-13111F3512Lc.jpg"></b>
-                        <span>PICOOC</span>
+                    <a href="/plus/view.php?aid=<%=teacher[i].id%>">
+                        <b><img src="<%- addHost(teacher[i].d_pichead) %>"></b>
+                        <span><%=teacher[i].title%></span>
                     </a>
                 </li>
-                <li class="swiper-slide prologo">
-                    <a href="#">
-                        <b><img src="http://www.bkh5.com/uploads/131117/1-13111F3520Y63.jpg"></b>
-                        <span>美食美酒</span>
-                    </a>
-                </li>
-                <li class="swiper-slide prologo">
-                    <a href="#">
-                        <b><img src="http://www.bkh5.com/uploads/131117/1-13111F41422R9.jpg"></b>
-                        <span>中美商会（网站）</span>
-                    </a>
-                </li>
-                <li class="swiper-slide prologo">
-                    <a href="#">
-                        <b><img src="http://www.bkh5.com/uploads/131117/1-13111F4145N44.jpg"></b>
-                        <span>HTML5项目</span>
-                    </a>
-                </li>
-                <li class="swiper-slide prologo">
-                    <a href="#">
-                        <b><img src="http://www.bkh5.com/uploads/131117/1-13111F3512Lc.jpg"></b>
-                        <span>PICOOC</span>
-                    </a>
-                </li>
-                <li class="swiper-slide prologo">
-                    <a href="#">
-                        <b><img src="http://www.bkh5.com/uploads/131117/1-13111F3520Y63.jpg"></b>
-                        <span>美食美酒</span>
-                    </a>
-                </li>
-                <li class="swiper-slide prologo">
-                    <a href="#">
-                        <b><img src="http://www.bkh5.com/uploads/131117/1-13111F41422R9.jpg"></b>
-                        <span>中美商会（网站）</span>
-                    </a>
-                </li>
-                <li class="swiper-slide prologo">
-                    <a href="#">
-                        <b><img src="http://www.bkh5.com/uploads/131117/1-13111F4145N44.jpg"></b>
-                        <span>HTML5项目</span>
-                    </a>
-                </li>
+                <% } %>
             </ul>
         </div>
     </div>
@@ -116,18 +76,14 @@
         <h2>最新分享</h2>
     </div>
     <ul class="list-text list-text-share">
+        <% for(var i=0; i<tech.length; i++) {%>
         <li>
-            <a href="#">
-                <span>跨平台开发常用CSS3设置</span>
+            <a href="/plus/view.php?aid=<%=tech[i].id%>">
+                <span><%=tech[i].fulltitle%></span>
                 <i class="icon-right-open"></i>
             </a>
         </li>
-        <li>
-            <a href="#">
-                <span>跨平台开发常用CSS3设置</span>
-                <i class="icon-right-open"></i>
-            </a>
-        </li>
+        <% } %>
     </ul>
     <% include common-html/footer %>
 
