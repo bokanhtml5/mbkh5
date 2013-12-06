@@ -28,7 +28,7 @@ module.exports = function(app) {
 		var navdata = fs.readFileSync(basedir + "/views/mobile/common-html/nav.config", "utf8");
 		navdata = JSON.parse(navdata);
 
-		needle.post(apiurl + "ajax.php",'tid=1&datatpl='+getXML("index"),
+		needle.post(apiurl + "ajaxb.php",'tid=1&datatpl='+getXML("index"),
 			function (err,resp,body) {
 			
 			// 解析
@@ -90,7 +90,7 @@ module.exports = function(app) {
 		var navdata = fs.readFileSync(basedir + "/views/mobile/common-html/nav.config", "utf8");
 		navdata = JSON.parse(navdata);
 
-		needle.post(apiurl + "ajax.php",'tid='+req.query.tid+'&datatpl='+getXML("list_"+req.query.tid),
+		needle.post(apiurl + "ajaxb.php",'tid='+req.query.tid+'&datatpl='+getXML("list_"+req.query.tid),
 			function (err,resp,body) {
 			
 			// 解析

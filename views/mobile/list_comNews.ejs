@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+    <meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport"/>
+    <meta charset="UTF-8" />
+    <title><%=title%></title>
+    <meta name="description" content="<%=description%>" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/mobile/stylesheets/swiper.css" />
+    <link rel="stylesheet" href="/mobile/stylesheets/index.css" />
+    <link rel="stylesheet" href="/mobile/stylesheets/markdown.css" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+</head>
+<body>
+    <% include common-html/title %>
+    <% include common-html/nav %>
+    
+    <ul id="list" class="list-text list-text-share">
+        <% for (var i = 0; i < arc.length; i++){ %>
+        <li>
+            <a href="<%= arc[i].href %>">
+                <span><%= (i + 1) + ". " + arc[i].fulltitle %></span>
+                <i class="icon-right-open"></i>
+            </a>
+        </li>
+        <% } %>
+    </ul>
+    
+    <div class="btn-loadmore">
+        <i class="icon-down"></i>
+        <span>点击加载更多</span>
+    </div>
+    <% include common-html/footer %>
+ 
+    <script src="/mobile/javascripts/zepto.js"></script>
+    <script src="/mobile/javascripts/swiper.js"></script>
+
+    <script>
+    
+    $.fn._swiper = $.fn.swiper;
+    $.fn.swiper = function (opt) {
+        this.each(function (i, el) {
+            // 把swiper-slide-active的标签滚动到视野范围内
+            opt.initialSlide = $(el).find(".swiper-slide-active").index();
+            new Swiper(el, opt)
+        });
+        return this;
+    }
+    
+    $('.swiper').swiper({
+        slidesPerView: "auto",
+        freeMode: true,
+        freeModeFluid: true,
+        watchActiveIndex: false
+    });
+
+    // load more
+    ;(function () {
+        var state = "ready";
+        var $btn = $(".btn-loadmore");
+        var $icon = $(".btn-loadmore>i");
+        var $tip = $(".btn-loadmore>span");
+        var readyClass = $icon.attr("class");
+        var npage = 0;
+        var $wrap = $("#list");
+        var tpl = '<li>' + 
+            '<a href="{{href}}">' + 
+                '<span>{{index}}.{{title}}</span>' +
+                '<i class="icon-right-open"></i>' + 
+            '</a>' + 
+        '</li>';
+
+        function updateState () {
+            if (state == "ready") {
+                $btn.removeClass("gray");
+                $icon.show().attr("class", readyClass);
+                $tip.html("点击加载下一页");
+            };
+            if (state == "loading") {
+                $icon.hide();
+                $btn.addClass("gray");
+                $tip.html("加载中...");
+            };
+            if (state == 'over') {
+                $icon.hide();
+                $btn.addClass("class", "gray");
+                $tip.html("已到最后一页");
+            };
+        }
+
+        $btn.click(function () {
+            if (state != "ready") {
+                return;
+            };
+
+            state = "loading";
+            updateState();
+
+            npage++;
+            $.ajax({
+                url: "http://www.bkh5.com/plus/ajax.php?tid=12&ajax=true&page="+npage,
+                dataType:"json",
+                success: function (data) {
+                    if (!data.data.arc || typeof data.data.arc.length != "number" || data.data.arc.length < 10) {
+                        state = "over";     // 最后一页
+                    }else{
+                        state = "ready";
+                    }
+                    updateState();
+
+                    successCallback(data);
+
+                },
+                timeout:function () {
+                    npage--;
+                    state = "over";
+                    updateState();
+                }
+            })
+        });
+
+        function successCallback (data) {
+            var html = "";
+            var offset = npage * 10;
+            // fix data error
+            if (data.data.arc && !(typeof data.data.arc.length == 'number') ) {
+                var arr = [data.data.arc];
+            }else{
+                var arr = data.data.arc;
+            }
+            for (var i = 0; i < arr.length; i++) {
+                html += tpl.replace(/{{href}}/,arr[i].href)
+                        .replace(/{{index}}/,(offset+i+1))
+                        .replace(/{{title}}/,arr[i].fulltitle);
+            };
+            $wrap.html($wrap.html() + html);
+        }
+
+    })();
+    
+    </script>
+</body>
+</html>
