@@ -251,6 +251,9 @@ h6 {
 .mb10 {
   margin-bottom: 10px;
 }
+.mb15 {
+  margin-bottom: 15px;
+}
 .gray {
   color: #616161;
 }
@@ -1979,7 +1982,35 @@ footer {
 .aps-name + span {
   float: right;
   padding-right: 10px;
+  font-size: 0.8rem;
+  color: #616161;
 }
 .aps-intro dl dt {
   overflow: hidden;
+}
+.aps-position {
+  color: #616161;
+  padding-left: 3px;
+  line-height: 1.82857143rem;
+}
+.aps-btn-access {
+  margin-bottom: 0;
+}
+.prologo .aps-img {
+  margin: 0 6px;
+}
+/**
+ * page article_proShow
+ */
+/**
+ * page article_comNews
+ * class prefix: acn
+ */
+.acn-head {
+  text-align: center;
+  line-height: 1.78823529rem;
+}
+.acn-head h1 + span {
+  color: #616161;
+  font-size: 14px;
 }
