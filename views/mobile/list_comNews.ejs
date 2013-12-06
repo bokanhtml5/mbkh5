@@ -15,7 +15,7 @@
     <% include common-html/title %>
     <% include common-html/nav %>
     
-    <ul id="list" class="list-text list-text-share">
+    <ul id="list" class="list-text list-text-default">
         <% for (var i = 0; i < arc.length; i++){ %>
         <li>
             <a href="<%= arc[i].href %>">
@@ -72,18 +72,18 @@
 
         function updateState () {
             if (state == "ready") {
-                $btn.removeClass("gray");
+                $btn.css("opacity","1");
                 $icon.show().attr("class", readyClass);
                 $tip.html("点击加载下一页");
             };
             if (state == "loading") {
                 $icon.hide();
-                $btn.addClass("gray");
+                $btn.css("opacity","0.5");
                 $tip.html("加载中...");
             };
             if (state == 'over') {
                 $icon.hide();
-                $btn.addClass("class", "gray");
+                $btn.css("opacity","0.5");
                 $tip.html("已到最后一页");
             };
         }

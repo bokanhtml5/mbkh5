@@ -272,6 +272,7 @@ h6 {
   text-align: center;
   cursor: pointer;
   margin: 0.5rem 0;
+  color: #616161;
 }
 /****************************************************
  * access btn
@@ -1743,6 +1744,24 @@ h6 {
   top: 50%;
   margin-top: -0.5em;
 }
+.list-text-default {
+  position: relative;
+}
+.list-text-default > li {
+  border-bottom: 1px solid #dfe3e4;
+}
+.list-text-default > li:first-child {
+  -webkit-box-shadow: 0 1px 3px 0px #e1d7c2 inset;
+  -o-box-shadow: 0 1px 3px 0px #e1d7c2 inset;
+  -moz-box-shadow: 0 1px 3px 0px #e1d7c2 inset;
+  -ms-box-shadow: 0 1px 3px 0px #e1d7c2 inset;
+  box-shadow: 0 1px 3px 0px #e1d7c2 inset;
+}
+.list-text-default > li a,
+.list-text-default > li a span,
+.list-text-default > li a i {
+  color: #616161;
+}
 .list-text-share {
   position: relative;
 }
@@ -1762,6 +1781,7 @@ h6 {
 .list-text-share > li:last-child {
   border-bottom: none;
 }
+.list-text-share > li a,
 .list-text-share > li a span,
 .list-text-share > li a i {
   color: #b47e5c;
