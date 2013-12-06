@@ -2,7 +2,7 @@
         <div class="nav-in swiper hlist-separator">
             <ul class="swiper-wrapper">
                 <% for(var i = 0 ;i < nav.length; i++){ %>
-                <li class="<% if(nav[i].id == nav.id){%>swiper-slide-active swiper-active<%}%> swiper-slide"><a href="/plus/list.php?tid=<%=nav[i].id%>"><%=nav[i].title%></a></li>
+                <li class="<% if(nav[i].id == nav.id){%>swiper-slide-active swiper-active<%}%> swiper-slide"><a href="<%=nav[i].href%>"><%=nav[i].title%></a></li>
                 <% } %>
             </ul>
         </div>
