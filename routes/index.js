@@ -12,8 +12,8 @@ module.exports = function(app) {
 	var apiurl = app.get("apiurl");
 	var tpldir = basedir + "/views/mobile/";
 
-	function getXML () {
-		var src = basedir + "/models/article.xml";
+	function getXML (name) {
+		var src = basedir + "/models/" + name + ".xml";
 		try{
 			var a = fs.readFileSync(src, "utf8");
 			return a;
@@ -25,13 +25,40 @@ module.exports = function(app) {
 	}
 
 	app.get("/",function (req, res) {
-		res.send("123");
+		var navdata = fs.readFileSync(basedir + "/views/mobile/common-html/nav.config", "utf8");
+		navdata = JSON.parse(navdata);
+
+		needle.post(apiurl + "ajax.php",'tid=1&datatpl='+getXML("index"),
+			function (err,resp,body) {
+			
+			// 解析
+			try{
+				var data = JSON.parse(body);
+
+				console.log(data);
+
+				navdata.id = data.data.typeid;
+				data.data.nav = navdata;
+				
+				// 渲染
+				res.render("mobile/"+data.data.tplname,data.data);
+			}catch(e){
+				console.error("JSON解析错误",body);
+				res.send(404, '没有指定网页');
+				// res.end("数据错误，请报告admin@bokanedu.com"+body);
+			}
+			
+
+			// 读取模板
+			
+			// 渲染
+		});
 	});
 	app.get(/^\/plus\/view\.php/, function (req, res) {
 		var navdata = fs.readFileSync(basedir + "/views/mobile/common-html/nav.config", "utf8");
 		navdata = JSON.parse(navdata);
 
-		needle.post(apiurl + "ajax_view.php",'aid='+req.query.aid+'&datatpl='+getXML(),
+		needle.post(apiurl + "ajax_view.php",'aid='+req.query.aid+'&datatpl='+getXML("article"),
 			function (err,resp,body) {
 			
 			// 解析
@@ -58,4 +85,37 @@ module.exports = function(app) {
 		});
 		
 	});
+
+	app.get(/^\/plus\/list\.php/, function (req, res) {
+		var navdata = fs.readFileSync(basedir + "/views/mobile/common-html/nav.config", "utf8");
+		navdata = JSON.parse(navdata);
+
+		needle.post(apiurl + "ajax.php",'tid='+req.query.tid+'&datatpl='+getXML("list_"+req.query.tid),
+			function (err,resp,body) {
+			
+			// 解析
+			try{
+				var data = JSON.parse(body);
+
+				console.log(data);
+
+				navdata.id = data.data.typeid;
+				data.data.nav = navdata;
+				
+				// 渲染
+				res.render("mobile/"+data.data.tplname,data.data);
+			}catch(e){
+				console.error("JSON解析错误",body);
+				res.send(404, '没有指定网页');
+				// res.end("数据错误，请报告admin@bokanedu.com"+body);
+			}
+			
+
+			// 读取模板
+			
+			// 渲染
+		});
+		
+	});
+
 };
