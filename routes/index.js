@@ -37,7 +37,7 @@ module.exports = function(app) {
 
 				console.log(data);
 
-				navdata.id = data.data.typeid;
+				navdata.id = 0;
 				data.data.nav = navdata;
 				
 				// 渲染
