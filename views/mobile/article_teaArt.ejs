@@ -3,9 +3,8 @@
 <head>
     <meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport"/>
     <meta charset="UTF-8" />
-    <title>技术详情</title>
-    <meta name="keywords" content="" />
-    <meta name="description" content="" />
+    <title><%=title%></title>
+    <meta name="description" content="<%=description%>" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <link rel="stylesheet" href="/mobile/stylesheets/swiper.css" />
     <link rel="stylesheet" href="/mobile/stylesheets/index.css" />
@@ -18,23 +17,12 @@
     <% include common-html/nav %>
     
     <div class="container pt20 mb15">
-        <div class="acn-head">
-            <h1 class='acn-title'>提高网页加载速度---CSS Sprites篇</h1>
-            <span>2013-8-12 8:00</span>
+        <div class="arc-head">
+            <h1><%=title%></h1>
+            <span><%=pubdate%></span>
         </div>
         <div class="markdown-body">
-           <p style="text-indent: 32px;line-height: 30px;">
-                <span style="font-family: 微软雅黑"></span>
-            </p>
-            <p>
-                <img src="http://www.bkh5.com/ueditor/upload/../upload/20130813/13763752078424.gif" style="float:none;" title="2611.gif"/>
-            </p>
-            <p style="text-indent: 32px;line-height: 30px;">
-                <span style="font-family: 微软雅黑">2013年5月20日上午，西安文理学院软件学院党总支书记陈彩英书记莅临博看文思，与博看文思相关领导进行会面，深入探讨人才培养、交流合作等问题。</span>
-            </p>
-            <p style="text-indent: 32px;line-height: 30px;">
-                <span style="font-family: 微软雅黑">安文理学院是西安市政府主办的唯一一所全日制普通本科高校，先后由五所学校合并而成。1990年，西安大学与西安师范专科学校合并为西安联合大学；2003年，经国家教育部批准，西安联合大学与西安教育学院合并更名为西安文理学院；2006年、2009年，西安幼儿师范学校和西安师范学校分别并入西安文理学院。学校位于历史文化古都西安市的国家级高新技术产业开发区，占地741亩，建筑面积35万平方米。现有藏书122余万册，教学仪器设备7000余万元。学校面向全国招生，现有全日制在校生13000余人。学校重视学科专业建设，现有文学、理学、工学、教育学、管理学、法学、历史学、农学、艺术学等9大学科门类，39个本科专业。专门史、中国古代文学、分析化学、原子与分子物理学被确定为省级重点学科，艺术设计、汉语言文学、计算机科学与技术、应用化学专业被确定为省级特色专业建设点，7门课程被评为省级精品课程，分析化学系列课程、长安历史文化系列课程教学团队被评为省级教学团队，“化学实验教学中心”获省级实验教学示范中心称号，“创意—实践型艺术设计人才培养模式”、“应用型软件服务外包人才”被授予省级人才培养模式创新实验区称号，《分子生物学》被评为省级双语教学示范课。</span>
-            </p>
+            <%-replaceUrl(d_con)%>
         </div>
     </div>
     
@@ -42,18 +30,14 @@
         <h2>最新分享</h2>
     </div>
     <ul class="list-text list-text-share">
+        <% for(var i=0; i<tech.length; i++) {%>
         <li>
-            <a href="#">
-                <span>跨平台开发常用CSS3设置</span>
+            <a href="/plus/view.php?aid=<%=tech[i].id%>">
+                <span><%=tech[i].fulltitle%></span>
                 <i class="icon-right-open"></i>
             </a>
         </li>
-        <li>
-            <a href="#">
-                <span>跨平台开发常用CSS3设置</span>
-                <i class="icon-right-open"></i>
-            </a>
-        </li>
+        <% } %>
     </ul>
     <% include common-html/footer %>
 
