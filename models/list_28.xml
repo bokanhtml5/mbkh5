@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<data>
+		<title>{dede:field.typename/}</title>
+		<typeid>{dede:field.typeid/}</typeid>
+		<keyword>{dede:field.keywords/}</keyword>
+		<description>{dede:field.description/}</description>
+		{dede:list pagesize="10" orderby='weight'}
+		<arc>
+			<href>/plus/view.php?aid=[field:id/]</href>
+			<title>[field:title/]</title>
+			<fulltitle>[field:fulltitle/]</fulltitle>
+		</arc>
+		{/dede:list}
+	</data>
+</root>

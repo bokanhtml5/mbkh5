@@ -15,7 +15,7 @@
     <% include common-html/title %>
     <% include common-html/nav %>
     
-    <ul id="list" class="list-text list-text-default">
+    <ul id="list1" class="list-text list-text-default">
         <% for (var i = 0; i < arc.length; i++){ %>
         <li>
             <a href="<%= arc[i].href %>">
@@ -26,7 +26,7 @@
         <% } %>
     </ul>
     
-    <div class="btn-loadmore">
+    <div class="btn-loadmore" data-wraper="list1" data-tid="28">
         <i class="icon-down"></i>
         <span>点击加载更多</span>
     </div>
@@ -54,15 +54,24 @@
         watchActiveIndex: false
     });
 
-    // load more
-    ;(function () {
+    $.fn.loadmore = function () {
+
+        if (this.length > 1) {
+            this.each(function (i, val) {
+                $(val).loadmore();
+            });
+            return;
+        };
+
         var state = "ready";
-        var $btn = $(".btn-loadmore");
-        var $icon = $(".btn-loadmore>i");
-        var $tip = $(".btn-loadmore>span");
+        var $btn = this;
+        var $icon = this.find("i");
+        var $tip = this.find("span");
         var readyClass = $icon.attr("class");
+        var tid = $btn.attr("data-tid");
+        var wrapId = $btn.attr("data-wraper");
         var npage = 0;
-        var $wrap = $("#list");
+        var $wrap = $("#" + wrapId);
         var tpl = '<li>' + 
             '<a href="{{href}}">' + 
                 '<span>{{index}}.{{title}}</span>' +
@@ -98,7 +107,7 @@
 
             npage++;
             $.ajax({
-                url: "http://www.bkh5.com/plus/ajax.php?tid=12&ajax=true&page="+npage,
+                url: "http://www.bkh5.com/plus/ajax.php?tid="+tid+"&ajax=true&page="+npage,
                 dataType:"json",
                 success: function (data) {
                     if (!data.data.arc || typeof data.data.arc.length != "number" || data.data.arc.length < 10) {
@@ -133,10 +142,14 @@
                         .replace(/{{index}}/,(offset+i+1))
                         .replace(/{{title}}/,arr[i].fulltitle);
             };
+            console.log(html);
             $wrap.html($wrap.html() + html);
         }
+    }
 
-    })();
+    $(function () {
+        $(".btn-loadmore").loadmore();
+    });
     
     </script>
 </body>
