@@ -4,5 +4,40 @@
 		<title>{dede:global.cfg_webname/}</title>
 		<keyword>{dede:global.cfg_keywords/}</keyword>
 		<description>{dede:global.cfg_description/}</description>
+		<!-- 项目 -->
+		{dede:arclist typeid="21" channelid="23" addfields="d_logo,d_pic" limit="0,10" orderby='weight'}
+		<project>
+			<href>/plus/view.php?aid=[field:id/]</href>
+			<title>[field:title/]</title>
+			<fulltitle>[field:fulltitle/]</fulltitle>
+			<d_logo>[field:d_logo/]</d_logo>
+			<d_pic>[field:d_pic/]</d_pic>
+		</project>
+		{/dede:arclist}
+		<!-- 讲师 -->
+		{dede:arclist typeid="5" channelid="16" addfields="d_pichead" limit="0,10" orderby='weight'}
+		<teacher>
+			<href>/plus/view.php?aid=[field:id/]</href>
+			<id>[field:id/]</id>
+			<title>[field:title/]</title>
+			<d_pichead>[field:d_pichead/]</d_pichead>
+		</teacher>
+		{/dede:arclist}
+		<!-- 新闻 -->
+		{dede:arclist typeid="12" limit="0,5" orderby='weight'}
+		<news>
+			<href>/plus/view.php?aid=[field:id/]</href>
+			<title>[field:title/]</title>
+			<fulltitle>[field:fulltitle/]</fulltitle>
+		</news>
+		{/dede:arclist}
+		<!-- 技术 -->
+		{dede:arclist typeid="28" limit="0,5" orderby='weight'}
+		<tech>
+			<href>/plus/view.php?aid=[field:id/]</href>
+			<title>[field:title/]</title>
+			<fulltitle>[field:fulltitle/]</fulltitle>
+		</tech>
+		{/dede:arclist}
 	</data>
 </root>
