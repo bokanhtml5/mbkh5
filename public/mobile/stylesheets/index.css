@@ -276,7 +276,11 @@ h6 {
 }
 .bg-purple {
   background-color: #9b59b6;
-  border-top: 2px solid #791cae;
+  -webkit-box-shadow: 0 1px 2px 0px rgba(0, 0, 0, 0.5) inset;
+  -o-box-shadow: 0 1px 2px 0px rgba(0, 0, 0, 0.5) inset;
+  -moz-box-shadow: 0 1px 2px 0px rgba(0, 0, 0, 0.5) inset;
+  -ms-box-shadow: 0 1px 2px 0px rgba(0, 0, 0, 0.5) inset;
+  box-shadow: 0 1px 2px 0px rgba(0, 0, 0, 0.5) inset;
 }
 .bg-purple-icon {
   color: #74369a;
