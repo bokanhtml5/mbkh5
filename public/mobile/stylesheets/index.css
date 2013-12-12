@@ -2175,3 +2175,7 @@ footer {
 .pi-footer .list-text .icon-right-open {
   color: #007175;
 }
+.pi-footer ul > li:first-child {
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}
