@@ -32,7 +32,7 @@ if ('development' == app.get('env')) {
 
 // development only
 app.configure('development', function(){
-    app.set('apiurl', 'http://a.bokanh5.com/plus/');
+    app.set('apiurl', 'http://www.bkh5.com/plus/');
 })
 
 // production only
