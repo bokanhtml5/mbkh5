@@ -28,14 +28,14 @@
 }
 .bg-blue{
 	background-color:#14a5ea;
-	border-top: 2px solid #126ba6;
+	.box-inset-shadow(0,1px,2px,0px,rgba(0,0,0,0.5));
 }
 .bg-blue-icon{
 	color:#0a78e0;	
 }
 .bg-orange{
 	background:#f6b235;
-	border-top: 2px solid #be8304;
+	.box-inset-shadow(0,1px,2px,0px,rgba(0,0,0,0.5));
 }
 .bg-orange-icon{
 	color:#f28c1b;	
@@ -50,8 +50,13 @@
 }
 .bg-green{
 	background-color: #00a2a5;
-	border-top: 2px solid #0a7d66;
+	.box-inset-shadow(0,1px,2px,0px,rgba(0,0,0,0.5));
+
 }
 .bg-green-icon{
 	color:#007175;
+}
+.pi-special .list-text-default > li:first-child {
+	box-shadow: none;
+	-webkit-box-shadow:none;
 }

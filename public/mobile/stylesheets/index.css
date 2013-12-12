@@ -262,14 +262,22 @@ h6 {
 }
 .bg-blue {
   background-color: #14a5ea;
-  border-top: 2px solid #126ba6;
+  -webkit-box-shadow: 0 1px 2px 0px rgba(0, 0, 0, 0.5) inset;
+  -o-box-shadow: 0 1px 2px 0px rgba(0, 0, 0, 0.5) inset;
+  -moz-box-shadow: 0 1px 2px 0px rgba(0, 0, 0, 0.5) inset;
+  -ms-box-shadow: 0 1px 2px 0px rgba(0, 0, 0, 0.5) inset;
+  box-shadow: 0 1px 2px 0px rgba(0, 0, 0, 0.5) inset;
 }
 .bg-blue-icon {
   color: #0a78e0;
 }
 .bg-orange {
   background: #f6b235;
-  border-top: 2px solid #be8304;
+  -webkit-box-shadow: 0 1px 2px 0px rgba(0, 0, 0, 0.5) inset;
+  -o-box-shadow: 0 1px 2px 0px rgba(0, 0, 0, 0.5) inset;
+  -moz-box-shadow: 0 1px 2px 0px rgba(0, 0, 0, 0.5) inset;
+  -ms-box-shadow: 0 1px 2px 0px rgba(0, 0, 0, 0.5) inset;
+  box-shadow: 0 1px 2px 0px rgba(0, 0, 0, 0.5) inset;
 }
 .bg-orange-icon {
   color: #f28c1b;
@@ -287,10 +295,18 @@ h6 {
 }
 .bg-green {
   background-color: #00a2a5;
-  border-top: 2px solid #0a7d66;
+  -webkit-box-shadow: 0 1px 2px 0px rgba(0, 0, 0, 0.5) inset;
+  -o-box-shadow: 0 1px 2px 0px rgba(0, 0, 0, 0.5) inset;
+  -moz-box-shadow: 0 1px 2px 0px rgba(0, 0, 0, 0.5) inset;
+  -ms-box-shadow: 0 1px 2px 0px rgba(0, 0, 0, 0.5) inset;
+  box-shadow: 0 1px 2px 0px rgba(0, 0, 0, 0.5) inset;
 }
 .bg-green-icon {
   color: #007175;
+}
+.pi-special .list-text-default > li:first-child {
+  box-shadow: none;
+  -webkit-box-shadow: none;
 }
 /**
  * 用到的组件
@@ -2106,9 +2122,12 @@ footer {
   height: 38px;
   line-height: 38px;
   padding-left: 10px;
+  font-weight: normal;
 }
 .pi-title span {
   color: #fff;
+  font-weight: normal;
+  font-size: 1.05rem;
 }
 .pi-title a {
   display: block;
@@ -2129,7 +2148,7 @@ footer {
 }
 .pi-footer {
   line-height: 38px;
-  border-bottom: 2px solid #0a7d66;
+  padding-top: 3px;
 }
 .pi-footer h2 {
   height: 34px;
@@ -2151,7 +2170,7 @@ footer {
   position: static;
   color: #fff;
   font-size: 1.45rem;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5), 0 -1px 0 rgba(0, 0, 0, 0.1);
+  text-shadow: none;
 }
 .pi-footer .list-text .icon-right-open {
   color: #007175;
